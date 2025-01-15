@@ -1,0 +1,17 @@
+{
+    "name": "maria/acme_fitness",
+    "require": {
+        "slim/slim": "^4.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maria\\AcmeFitness\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maria Clara Monteiro",
+            "email": "mcmpacheco7@gmail.com"
+        }
+    ]
+}
