@@ -1,6 +1,8 @@
 <?php
+namespace App\models;
 
-class Variacao {
+use JsonSerializable;
+class Variacao implements JsonSerializable {
     private $id;
     private $cor;
     private $tamanho;
@@ -88,5 +90,16 @@ class Variacao {
         $this->produto = $produto;
 
         return $this;
+    }
+
+    public function jsonSerialize() {
+        return [
+            'id' => $this->id,
+            'cor' => $this->cor,
+            'tamanho' => $this->tamanho,
+            'quantidade' => $this->quantidade,
+            'imagem' => $this->imagem,
+            'produto' => $this->produto
+        ];
     }
 }

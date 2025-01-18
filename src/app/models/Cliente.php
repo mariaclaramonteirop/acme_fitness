@@ -1,6 +1,8 @@
 <?php
 namespace app\models;
-class Cliente {
+
+use JsonSerializable;
+class Cliente implements JsonSerializable{
     private $id;
     private  $nome;
     private  $cpf;
@@ -50,5 +52,15 @@ class Cliente {
         $this->dataDeNascimento = $dataDeNascimento;
 
         return $this;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'id' => $this->id,
+            'nome' => $this->nome,
+            'cpf' => $this->cpf,
+            'dataDeNascimento' => $this->dataDeNascimento
+        ];
     }
 }

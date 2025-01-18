@@ -1,6 +1,9 @@
 <?php
 
-class Endereco {
+namespace App\models;
+
+use JsonSerializable;
+class Endereco implements JsonSerializable{
     private int $id;
     private string $logradouro;
     private int $numero;
@@ -65,5 +68,18 @@ class Endereco {
         $this->complemento = $complemento;
 
         return $this;
+   }
+
+    public function jsonSerialize() {
+        return [
+            'id' => $this->id,
+            'logradouro' => $this->logradouro,
+            'numero' => $this->numero,
+            'bairro' => $this->bairro,
+            'cidade' => $this->cidade,
+            'estado' => $this->estado,
+            'cep' => $this->cep,
+            'complemento' => $this->complemento
+        ];
     }
 }
