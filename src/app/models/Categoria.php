@@ -5,6 +5,8 @@ namespace App\models;
 use JsonSerializable;
 class Categoria implements JsonSerializable{
     private $id;
+
+    private $codigo;
     private $nome;
     private $descricao;
     
@@ -56,4 +58,16 @@ class Categoria implements JsonSerializable{
         ];
     }
     
+
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+
+    public function setCodigo($codigo): self
+    {
+        $this->codigo = $codigo;
+
+        return $this;
+    }
 }
