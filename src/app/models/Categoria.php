@@ -49,25 +49,26 @@ class Categoria implements JsonSerializable{
         return $this;
     }
 
-    public function jsonSerialize()
-    {
-        return [
-            'id' => $this->id,
-            'nome' => $this->nome,
-            'descricao' => $this->descricao
-        ];
-    }
     
-
+    
     public function getCodigo()
     {
         return $this->codigo;
     }
-
+    
     public function setCodigo($codigo): self
     {
         $this->codigo = $codigo;
-
+        
         return $this;
+    }
+    public function jsonSerialize()
+    {
+        return [
+            'id' => $this->id,
+            'codigo' => $this->codigo,
+            'nome' => $this->nome,
+            'descricao' => $this->descricao
+        ];
     }
 }
