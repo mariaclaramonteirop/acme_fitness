@@ -1,12 +1,15 @@
 <?php
 
 use App\models\Categoria;
-use src\core\PDOSingleton.php;
+use PDOSingleton;
+use PDO;
+use PDOException;
+
 class CategoriaDao {
     
     private $conn;
-    public function __construct(PDOSingleton $conn) {
-        $this->conn = $conn->getConnection();
+    public function __construct() {
+        $this->conn = PDOSingleton::get();
         
     }
 
@@ -77,7 +80,7 @@ class CategoriaDao {
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             $categorias = array();
-            
+
             foreach($result as $r){
                 $categoria = new Categoria($r['nome'], $r['descricao']);
                 $categoria->setId($r['id']);
@@ -89,5 +92,4 @@ class CategoriaDao {
             return false;
         }
     }
-
 }
