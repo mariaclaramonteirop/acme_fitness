@@ -1,5 +1,5 @@
 <?php
-
+namespace Src\core;
 use PDO;
 use PDOException;
 
@@ -25,5 +25,17 @@ class PDOSingleton {
         }
 
         return self::$pdo;
+    }
+
+    public static function beginTransaction() {
+        self::get()->beginTransaction();
+    }
+
+    public static function commit() {
+        self::get()->commit();
+    }
+
+    public static function rollBack() {
+        self::get()->rollBack();
     }
 }
