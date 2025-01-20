@@ -1,8 +1,8 @@
 <?php
 
-namespace \App\Controllers;
+namespace Maria\AcmeFitness\Controllers;
 
-use CategoriaDao;
+use App\dao\CategoriaDao;
 use http\HttpCodeStatus;
 use App\models\Categoria;
 

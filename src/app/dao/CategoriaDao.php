@@ -1,7 +1,7 @@
 <?php
-
+namespace Maria\AcmeFitness\Dao;
 use App\models\Categoria;
-use PDOSingleton;
+use Src\core\PDOSingleton;
 use PDO;
 use PDOException;
 
