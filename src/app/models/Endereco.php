@@ -4,15 +4,15 @@ namespace App\models;
 
 use JsonSerializable;
 class Endereco implements JsonSerializable{
-    private int $id;
-    private string $logradouro;
-    private int $numero;
-    private string $bairro;
-    private string $cidade;
-    private string $estado;
-    private string $cep;
-
-    private string $complemento;
+    private $id;
+    private $logradouro;
+    private $numero;
+    private $bairro;
+    private $cidade;
+    private $estado;
+    private $cep;
+    private $complemento;
+    private $cliente;
 
     const TAM_MAX_LOGRADOURO = 100;
     const TAM_MAX_BAIRRO = 50;
@@ -20,56 +20,125 @@ class Endereco implements JsonSerializable{
     const TAM_MAX_ESTADO = 2;
     const TAM_MAX_CEP = 8;
     const TAM_MAX_COMPLEMENTO = 100;
-    public function __construct($id, $logradouro, $numero, $bairro, $cidade, $estado, $cep) {
-        $this->id = $id;
-        $this->logradouro = $logradouro;
-        $this->numero = $numero;
-        $this->bairro = $bairro;
-        $this->cidade = $cidade;
-        $this->estado = $estado;
-        $this->cep = $cep;
+    public function __construct(Cliente $cliente, $logradouro, $numero, $bairro, $cidade, $estado, $cep, $complemento = "") {
+        $this->setLogradouro($logradouro);
+        $this->setNumero($numero);
+        $this->setBairro($bairro);
+        $this->setCidade($cidade);
+        $this->setEstado($estado);
+        $this->setCep($cep);
+        $this->setComplemento($complemento);
+        $this->setCliente($cliente);
+    }
+    
+    public function getCliente()
+    {
+        return $this->cliente;
     }
 
-    public function getId() {
+    public function setCliente(Cliente $valor): self
+    {
+        $this->cliente = $valor;
+
+        return $this;
+    }
+
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function getLogradouro() {
+    public function setId($id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public function getLogradouro()
+    {
         return $this->logradouro;
     }
 
-    public function getNumero() {
+    public function setLogradouro($logradouro): self
+    {
+        $this->logradouro = $logradouro;
+
+        return $this;
+    }
+
+    public function getNumero()
+    {
         return $this->numero;
     }
 
-    public function getBairro() {
+    public function setNumero($numero): self
+    {
+        $this->numero = $numero;
+
+        return $this;
+    }
+
+    public function getBairro()
+    {
         return $this->bairro;
     }
 
-    public function getCidade() {
+    public function setBairro($bairro): self
+    {
+        $this->bairro = $bairro;
+
+        return $this;
+    }
+
+    public function getCidade()
+    {
         return $this->cidade;
     }
 
-    public function getEstado() {
+    public function setCidade($cidade): self
+    {
+        $this->cidade = $cidade;
+
+        return $this;
+    }
+
+    public function getEstado()
+    {
         return $this->estado;
     }
 
-    public function getCep() {
+    public function setEstado($estado): self
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    public function getCep()
+    {
         return $this->cep;
     }
 
-    public function getComplemento(): string
+    public function setCep($cep): self
+    {
+        $this->cep = $cep;
+
+        return $this;
+    }
+
+    public function getComplemento()
     {
         return $this->complemento;
     }
 
-    public function setComplemento(string $complemento): self
+    public function setComplemento($complemento): self
     {
         $this->complemento = $complemento;
 
         return $this;
-   }
-
+    }
+    
     public function jsonSerialize() {
         return [
             'id' => $this->id,
@@ -79,7 +148,8 @@ class Endereco implements JsonSerializable{
             'cidade' => $this->cidade,
             'estado' => $this->estado,
             'cep' => $this->cep,
-            'complemento' => $this->complemento
+            'complemento' => $this->complemento,
+            'cliente' => $this->cliente
         ];
     }
 }

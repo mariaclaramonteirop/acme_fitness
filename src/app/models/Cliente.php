@@ -1,5 +1,5 @@
 <?php
-namespace app\models;
+namespace App\models;
 
 use JsonSerializable;
 class Cliente implements JsonSerializable{
@@ -11,6 +11,10 @@ class Cliente implements JsonSerializable{
     const TAM_MIN_NOME = 3;
     const TAM_MIN_CPF = 11;
     
+    public function __construct(Cliente $cliente){
+        $this-setNome($nome);
+        $this-setCpf($cpf);
+        $this-setDataDeNascimento($dataDeNascimento);
     public function getId()
     {
         return $this->id;

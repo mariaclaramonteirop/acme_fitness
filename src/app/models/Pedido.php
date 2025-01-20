@@ -1,17 +1,18 @@
 <?php
+namespace App\models;
 
+use InvalidArgumentException;
 class Pedido{
     private $id;
     private $cliente; 
     private $endereco; 
-	private $itensPedido = [];
     private $valorFrete = 10.00;
+	private $itensPedido = [];
     private $desconto = 0;
     private $formaPagamento;
     private $dataPedido;
 
-    public function __construct($id, $cliente, $endereco, $formaPagamento, $dataPedido) {
-        $this->id = $id;
+    public function __construct(Cliente $cliente,Endereco  $endereco, $formaPagamento, $dataPedido) {
         $this->cliente = $cliente;
         $this->endereco = $endereco;
         $this->formaPagamento = $formaPagamento;
@@ -31,31 +32,6 @@ class Pedido{
 
         return $this;
     }
-
-    public function getCliente()
-    {
-        return $this->cliente;
-    }
-
-    public function setCliente($cliente): self
-    {
-        $this->cliente = $cliente;
-
-        return $this;
-    }
-
-    public function getEndereco()
-    {
-        return $this->endereco;
-    }
-
-    public function setEndereco($endereco): self
-    {
-        $this->endereco = $endereco;
-
-        return $this;
-    }
-
 
     public function getValorFrete()
     {
@@ -119,11 +95,45 @@ class Pedido{
 	{
 		return $this->itensPedido;
 	}
+    public function adicionarItemPedido(Variacao $produto, $quantidade) {
+        $this->itensPedido[] = ['produto' => $produto, 'quantidade' => $quantidade];
+    }
 
-	public function setItensPedido($itensPedido): self
-	{
-		$this->itensPedido = $itensPedido;
+    public function calcularTotalPedido() {
+        $totalPedido = 0;
 
-		return $this;
-	}
+        foreach ($this->itensPedido as $item) {
+            $totalPedido += $item['produto']->getPreco() * $item['quantidade'];
+        }
+
+        $totalPedido += $this->valorFrete;
+        $totalPedido -= ($totalPedido * $this->desconto);
+
+        return $totalPedido;
+    }
+
+
+    public function getCliente()
+    {
+        return $this->cliente;
+    }
+
+    public function setCliente(Cliente $cliente): self
+    {
+        $this->cliente = $cliente;
+
+        return $this;
+    }
+
+    public function getEndereco()
+    {
+        return $this->endereco;
+    }
+
+    public function setEndereco(Endereco $endereco): self
+    {
+        $this->endereco = $endereco;
+
+        return $this;
+    }
 }
