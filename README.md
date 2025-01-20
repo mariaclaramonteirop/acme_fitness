@@ -6,12 +6,7 @@
 - PHP 7+
 - Slim Framework
 - Composer
-- MySQL ou MariaDB
-
-## Funcionalidades
-- CRUD para entidades principais
-- Cálculo automático do valor total do pedido
-- Controle de estoque em tempo real
+- MySQL
 
 ## Instalação e Configuração
 
@@ -28,7 +23,7 @@
    ```
 
 3. **Configure o banco de dados:**
-   - Crie um banco de dados no MySQL/MariaDB.
+   - Crie um banco de dados no MySQL.
    - Importe o arquivo `sql.sql` fornecido no repositório.
    - Renomeie o arquivo `.env exempla` que contém os dados do banco.
 
