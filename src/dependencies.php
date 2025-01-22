@@ -1,18 +1,18 @@
 
 <?php
 use DI\ContainerBuilder;
-use App\dao\VariacaoDao;
-use App\dao\ProdutoDao;
-use App\dao\CategoriaDao;
-use App\dao\EnderecoDao;
-use App\dao\ClienteDao;
-use App\dao\PedidoDao;
-use App\controllers\VariacaoController;
-use App\controllers\ProdutoController;
-use App\controllers\CategoriaController;
-use App\controllers\EnderecoController;
-use App\controllers\ClienteController;
-use App\controllers\PedidoController;
+use Maria\AcmeFitness\Dao\VariacaoDao;
+use Maria\AcmeFitness\Dao\ProdutoDao;
+use Maria\AcmeFitness\Dao\CategoriaDao;
+use Maria\AcmeFitness\Dao\EnderecoDao;
+use Maria\AcmeFitness\Dao\ClienteDao;
+use Maria\AcmeFitness\Dao\PedidoDao;
+use Maria\AcmeFitness\Controllers\VariacaoController;
+use Maria\AcmeFitness\Controllers\ProdutoController;
+use Maria\AcmeFitness\Controllers\CategoriaController;
+use Maria\AcmeFitness\Controllers\ClienteController;
+use Maria\AcmeFitness\Controllers\EnderecoController;
+use Maria\AcmeFitness\Controllers\PedidoController;
 
 $containerBuilder = new ContainerBuilder();
 
