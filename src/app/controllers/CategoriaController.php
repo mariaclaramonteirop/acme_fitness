@@ -2,9 +2,9 @@
 
 namespace Maria\AcmeFitness\Controllers;
 
-use App\dao\CategoriaDao;
+use Maria\AcmeFitness\Dao\CategoriaDao;
 use http\HttpCodeStatus;
-use App\models\Categoria;
+use Maria\AcmeFitness\Models\Categoria;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -100,6 +100,7 @@ class CategoriaController {
                 $response->getBody()->write(json_encode(['error' => 'Nenhuma categoria encontrada']));
                 return $response->withStatus(HttpCodeStatus::NOT_FOUND)->withHeader('Content-Type', 'application/json');
             }
+            
             $response->getBody()->write(json_encode($categorias));
             $response->withStatus(HttpCodeStatus::OK)->withHeader('Content-Type', 'application/json');
 

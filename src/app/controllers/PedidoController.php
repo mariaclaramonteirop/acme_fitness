@@ -2,11 +2,11 @@
 
 namespace Maria\AcmeFitness\Controllers;
 
-use App\dao\ClienteDao;
-use App\dao\enderecoDao;
-use App\dao\PedidoDao;
-use App\dao\VariacaoDao;
-use App\models\Pedido;
+use Maria\AcmeFitness\Dao\ClienteDao;
+use Maria\AcmeFitness\Dao\enderecoDao;
+use Maria\AcmeFitness\Dao\PedidoDao;
+use Maria\AcmeFitness\Dao\VariacaoDao;
+use Maria\AcmeFitness\Models\Pedido;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Exception;
@@ -37,7 +37,7 @@ class PedidoController {
             $formaPagamento = $data['formaPagamento'];
             $dataPedido = date('Y-m-d');
 
-            $pedido = new Pedido($cliente, $endereco, $formaPagamento, $dataPedido, $itensData);
+            $pedido = new Pedido($cliente, $endereco, $formaPagamento, $dataPedido);
 
             // Obtendo os itens de venda
             $itensData = $data['itensPedido'];

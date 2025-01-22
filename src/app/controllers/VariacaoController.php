@@ -2,9 +2,9 @@
 
 namespace Maria\AcmeFitness\Controllers;
 
-use App\dao\ProdutoDao;
-use App\dao\VariacaoDao;
-use App\models\Variacao;
+use Maria\AcmeFitness\Dao\ProdutoDao;
+use Maria\AcmeFitness\Dao\VariacaoDao;
+use Maria\AcmeFitness\Models\Variacao;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Exception;
@@ -26,7 +26,7 @@ class VariacaoController{
             if($produto == null){
                 throw new Exception('Produto não encontrado');
             }
-            $variacao = new Variacao($data['cor'], $data['imagem'], $data['tamanho'], $data['quantidade'], $produto);
+            $variacao = new Variacao( $data['cor'], $data['imagem'], $data['tamanho'], $data['quantidade'], $produto);
             $this->variacaoDao->adicionar($variacao);
             $response = $response->withHeader('Content-type', 'application/json');
             $jsonResponse = json_encode(['mensagem' => 'Variacao adicionada com sucesso']);
@@ -86,7 +86,6 @@ class VariacaoController{
         try{
             $variacao = $this->variacaoDao->listarUm($id);
             if($variacao == null){
-                throw new Exception('Variacao não encontrada');
                 return $response->withStatus(HttpCodeStatus::NOT_FOUND)->withHeader('Content-Type', 'application/json');
             }
             $response = $response->withHeader('Content-type', 'application/json');
@@ -104,7 +103,6 @@ class VariacaoController{
             $variacao = $this->variacaoDao->listarTodos();
 
             if(empty($variacao)){
-                throw new Exception('Nenhuma variacao encontrada');
                 return $response->withStatus(HttpCodeStatus::NOT_FOUND)->withHeader('Content-Type', 'application/json');
             }
             $response = $response->withHeader('Content-type', 'application/json');

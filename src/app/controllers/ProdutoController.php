@@ -3,9 +3,9 @@
 namespace Maria\AcmeFitness\Controllers;
 
 
-use App\dao\CategoriaDao;
-use App\dao\ProdutoDao;
-use App\models\Produto;
+use Maria\AcmeFitness\Dao\CategoriaDao;
+use Maria\AcmeFitness\Dao\ProdutoDao;
+use Maria\AcmeFitness\Models\Produto;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Exception;
@@ -25,9 +25,12 @@ class ProdutoController{
     public function adicionar(Request $request, Response $response, $args){
         try{
             $data = $request->getParsedBody();
+
+            $categoria = $this->categoriaDao->listarUm($data['id_categoria']);
+            $dataCadastro = date('Y-m-d');
             
-            $produto = new Produto($data['nome'], $data['descricao'], $data['preco'], $data['peso'], $dataCadastro, $categoria);
-            $this->produtoDaoDao->adicionar($produto);
+            $produto = new Produto($data['codigo'],$data['nome'], $data['descricao'], $data['preco'], $data['peso'], $dataCadastro, $categoria);
+            $this->produtoDao->adicionar($produto);
 
             $categoria = $this->categoriaDao->listarUm($data['id_categoria']);
             $dataCadastro = date('Y-m-d');
@@ -47,7 +50,7 @@ class ProdutoController{
             $categoria = $this->categoriaDao->listarUm($data['id_categoria']);
             $dataCadastro = date('Y-m-d');
 
-            $produto = new Produto($data['nome'], $data['descricao'], $data['preco'], $data['peso'], $dataCadastro, $categoria);
+            $produto = new Produto($data['codigo'], $data['nome'], $data['descricao'], $data['preco'], $data['peso'], $dataCadastro, $categoria);
 
             $produto->setId($data['id']);
 

@@ -1,8 +1,8 @@
 <?php
 
 namespace Maria\AcmeFitness\Controllers;
-use App\models\Cliente;
-use App\dao\ClienteDao;
+use Maria\AcmeFitness\Models\Cliente;
+use Maria\AcmeFitness\Dao\ClienteDao;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Exception;
@@ -22,7 +22,7 @@ class ClienteController{
         try{
             $data = $request->getParsedBody();
         $cliente = new Cliente($data['nome'], $data['cpf'], $data['data_nascimento']);
-        $cliete->setId($data['id']);
+        $cliente->setId($data['id']);
             $this->clienteDao->adicionar($cliente);
 
             $response = $response->withHeader('content-type', 'application/json');

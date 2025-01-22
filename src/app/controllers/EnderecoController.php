@@ -2,9 +2,9 @@
 
 namespace Maria\AcmeFitness\Controllers;
 
-use App\dao\ClienteDao;
-use App\dao\EnderecoDao;
-use App\models\Endereco;
+use Maria\AcmeFitness\Dao\ClienteDao;
+use Maria\AcmeFitness\Dao\EnderecoDao;
+use Maria\AcmeFitness\Models\Endereco;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Exception;
@@ -24,7 +24,7 @@ class EnderecoController{
         try{
             $data = $request->getParsedBody();
             $cliente = $this->clienteDao->listarUm($data['id_cliente']);
-            $endereco = new Endereco($cliente, $data['logradouro'], $data['numero'], $data['bairro'], $data['cidade'], $data['estado']);
+            $endereco = new Endereco($cliente, $data['logradouro'], $data['numero'], $data['bairro'], $data['cidade'], $data['estado'], $data['cep'], $data['complemento']);
             $this->enderecoDao->adicionar($endereco);
 
             $response->withHeader('Content-type', 'application/json');
@@ -43,7 +43,7 @@ class EnderecoController{
         try{
             $data = $request->getParsedBody();
             $cliente = $this->clienteDao->listarUm($data['id_cliente']);
-            $endereco = new Endereco($cliente, $data['logradouro'], $data['numero'], $data['bairro'], $data['cidade'], $data['estado']);
+            $endereco = new Endereco($cliente, $data['logradouro'], $data['numero'], $data['bairro'], $data['cidade'], $data['estado'], $data['cep'], $data['complemento']);
             $endereco->setId($data['id']);
             $this->enderecoDao->alterar($endereco);
 
