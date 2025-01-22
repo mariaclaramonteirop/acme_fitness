@@ -1,5 +1,5 @@
 <?php
-namespace App\models;
+namespace Maria\AcmeFitness\Models;
 
 use JsonSerializable;
 class Cliente implements JsonSerializable{
@@ -11,10 +11,12 @@ class Cliente implements JsonSerializable{
     const TAM_MIN_NOME = 3;
     const TAM_MIN_CPF = 11;
     
-    public function __construct(Cliente $cliente){
-        $this-setNome($nome);
-        $this-setCpf($cpf);
-        $this-setDataDeNascimento($dataDeNascimento);
+    public function __construct($nome, $cpf , $dataDeNascimento){
+        
+        $this->setNome($nome);
+        $this->setCpf($cpf);
+        $this->setDataDeNascimento($dataDeNascimento);
+    }
     public function getId()
     {
         return $this->id;
@@ -58,10 +60,9 @@ class Cliente implements JsonSerializable{
         return $this;
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize():mixed
     {
         return [
-            'id' => $this->id,
             'nome' => $this->nome,
             'cpf' => $this->cpf,
             'dataDeNascimento' => $this->dataDeNascimento

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace Maria\AcmeFitness\Models;
 
 use JsonSerializable;
 class Categoria implements JsonSerializable{
@@ -10,6 +10,11 @@ class Categoria implements JsonSerializable{
     
     const TAM_MIN_NOME = 3;
     const TAM_MIN_DESCRICAO = 5;
+
+    public function __construct($nome, $descricao){
+        $this->nome = $nome;
+        $this->descricao = $descricao;
+    }
 
     public function getId()
     {
@@ -47,7 +52,7 @@ class Categoria implements JsonSerializable{
         return $this;
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize():mixed
     {
         return [
             'id' => $this->id,

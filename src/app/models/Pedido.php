@@ -1,5 +1,5 @@
 <?php
-namespace App\models;
+namespace Maria\AcmeFitness\Models;
 
 use InvalidArgumentException;
 class Pedido{

@@ -1,5 +1,5 @@
 <?php
-namespace App\models;
+namespace Maria\AcmeFitness\Models;
 use JsonSerializable;
 class Produto implements JsonSerializable {
     
@@ -12,15 +12,14 @@ class Produto implements JsonSerializable {
     private $dataCadastro;
     private $categoria;
 
-    public function __construct($id, $codigo, $nome, $descricao, $preco, $peso, $dataCadastro, $categoria) {
-        $this->id = $id;
-        $this->codigo = $codigo;
-        $this->nome = $nome;
-        $this->descricao = $descricao;
-        $this->preco = $preco;
-        $this->peso = $peso;
-        $this->dataCadastro = $dataCadastro;
-        $this->categoria = $categoria;
+    public function __construct($codigo, $nome, $descricao, $preco, $peso, $dataCadastro, Categoria $categoria) {
+        $this->setCodigo($codigo);
+        $this->setNome($nome);
+        $this->setDescricao($descricao);
+        $this->setPreco($preco);
+        $this->setPeso($peso);
+        $this->setDataCadastro($dataCadastro);
+        $this->setCategoria($categoria);
     }
     
 
@@ -136,9 +135,8 @@ class Produto implements JsonSerializable {
         return $this;
     }   
 
-    public function jsonSerialize() {
+    public function jsonSerialize():mixed {
         return [
-            'id' => $this->id,
             'codigo' => $this->codigo,
             'nome' => $this->nome,
             'descricao' => $this->descricao,

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace Maria\AcmeFitness\Models;
 
 use JsonSerializable;
 class Endereco implements JsonSerializable{
@@ -21,6 +21,7 @@ class Endereco implements JsonSerializable{
     const TAM_MAX_CEP = 8;
     const TAM_MAX_COMPLEMENTO = 100;
     public function __construct(Cliente $cliente, $logradouro, $numero, $bairro, $cidade, $estado, $cep, $complemento = "") {
+
         $this->setLogradouro($logradouro);
         $this->setNumero($numero);
         $this->setBairro($bairro);
@@ -139,7 +140,7 @@ class Endereco implements JsonSerializable{
         return $this;
     }
     
-    public function jsonSerialize() {
+    public function jsonSerialize():mixed {
         return [
             'id' => $this->id,
             'logradouro' => $this->logradouro,
