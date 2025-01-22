@@ -1,40 +1,51 @@
 <?php
 
+use Maria\AcmeFitness\Controllers\CategoriaController;
+use Maria\AcmeFitness\Controllers\ClienteController;
+use Maria\AcmeFitness\Controllers\EnderecoController;
+use Maria\AcmeFitness\Controllers\PedidoController;
+use Maria\AcmeFitness\Controllers\VariacaoController;
+use Maria\AcmeFitness\Controllers\ProdutoController;
 use Slim\App;
 
 return function (App $app) {
     $app->group('/api', function () use ($app) {
+        // Categoria Routes
+        $app->post('/categorias', [CategoriaController::class, 'adicionar']);
+        $app->put('/categorias', [CategoriaController::class, 'alterar']);
+        $app->delete('/categorias/{id}', [CategoriaController::class, 'excluir']);
+        $app->get('/categorias/{id}', [CategoriaController::class, 'listarUm']);
+        $app->get('/categorias', [CategoriaController::class, 'listarTodos']);
 
-        $app->post('/categoria/adicionar', 'Maria\AcmeFitness\ControllersCategoriaController:adicionar');
-        $app->post('/categoria/alterar', 'Maria\AcmeFitness\ControllersCategoriaController:alterar');
-        $app->delete('/categoria/excluir/{id}', 'Maria\AcmeFitness\ControllersCategoriaController:excluir');
-        $app->get('/categoria/listar/{id}', 'Maria\AcmeFitness\ControllersCategoriaController:listarUm');
-        $app->get('/categoria/listar', 'Maria\AcmeFitness\ControllersCategoriaController:listarTodos');
+        // Produto Routes
+        $app->post('/produtos', [ProdutoController::class, 'adicionar']);
+        $app->put('/produtos', [ProdutoController::class, 'alterar']);
+        $app->delete('/produtos/{id}', [ProdutoController::class, 'excluir']);
+        $app->get('/produtos/{id}', [ProdutoController::class, 'listarUm']);
+        $app->get('/produtos', [ProdutoController::class, 'listarTodos']);
 
-        $app->post('/produto/adicionar', 'Maria\AcmeFitness\ControllersProdutoController:adicionar');
-        $app->post('/produto/alterar', 'Maria\AcmeFitness\ControllersProdutoController:alterar');
-        $app->delete('/produto/excluir/{id}', 'Maria\AcmeFitness\ControllersProdutoController:excluir');
-        $app->get('/produto/listar/{id}', 'Maria\AcmeFitness\ControllersProdutoController:listarUm');
-        $app->get('/produto/listar', 'Maria\AcmeFitness\ControllersProdutoController:listarTodos');
+        // Variação Routes
+        $app->post('/variacoes', [VariacaoController::class, 'adicionar']);
+        $app->put('/variacoes', [VariacaoController::class, 'alterar']);
+        $app->delete('/variacoes/{id}', [VariacaoController::class, 'excluir']);
+        $app->get('/variacoes/{id}', [VariacaoController::class, 'listarUm']);
+        $app->get('/variacoes', [VariacaoController::class, 'listarTodos']);
 
-        $app->post('/variacao/adicionar', 'Maria\AcmeFitness\ControllersVariacaoController:adicionar');
-        $app->post('/variacao/alterar', 'Maria\AcmeFitness\ControllersVariacaoController:alterar');
-        $app->delete('/variacao/excluir/{id}', 'Maria\AcmeFitness\ControllersVariacaoController:excluir');
-        $app->get('/variacao/listar/{id}', 'Maria\AcmeFitness\ControllersVariacaoController:listarUm');
-        $app->get('/variacao/listar', 'Maria\AcmeFitness\ControllersVariacaoController:listarTodos');
-        
-        $app->post('/cliente/adicionar', 'Maria\AcmeFitness\ControllersClienteController:adicionar');
-        $app->post('/cliente/alterar', 'Maria\AcmeFitness\ControllersClienteController:alterar');
-        $app->delete('/cliente/excluir/{id}', 'Maria\AcmeFitness\ControllersClienteController:excluir');
-        $app->get('/cliente/listar/{id}', 'Maria\AcmeFitness\ControllersClienteController:listarUm');
-        $app->get('/cliente/listar', 'Maria\AcmeFitness\ControllersClienteController:listarTodos');
+        // Cliente Routes
+        $app->post('/clientes', [ClienteController::class, 'adicionar']);
+        $app->put('/clientes', [ClienteController::class, 'alterar']);
+        $app->delete('/clientes/{id}', [ClienteController::class, 'excluir']);
+        $app->get('/clientes/{id}', [ClienteController::class, 'listarUm']);
+        $app->get('/clientes', [ClienteController::class, 'listarTodos']);
 
-        $app->post('/endereco/adicionar', 'Maria\AcmeFitness\ControllersEnderecoController:adicionar');
-        $app->post('/endereco/alterar', 'Maria\AcmeFitness\ControllersEnderecoController:alterar');
-        $app->delete('/endereco/excluir/{id}', 'Maria\AcmeFitness\ControllersEnderecoController:excluir');
-        $app->get('/endereco/listar/{id}', 'Maria\AcmeFitness\ControllersEnderecoController:listarUm');
-        $app->get('/endereco/listar', 'Maria\AcmeFitness\ControllersEnderecoController:listarTodos');
+        // Endereço Routes
+        $app->post('/enderecos', [EnderecoController::class, 'adicionar']);
+        $app->put('/enderecos', [EnderecoController::class, 'alterar']);
+        $app->delete('/enderecos/{id}', [EnderecoController::class, 'excluir']);
+        $app->get('/enderecos/{id}', [EnderecoController::class, 'listarUm']);
+        $app->get('/enderecos', [EnderecoController::class, 'listarTodos']);
 
-        $app->post('/pedido/adicionar', 'Maria\AcmeFitness\ControllersPedidoController:adicionar');
+        // Pedido Routes
+        $app->post('/pedidos', [PedidoController::class, 'adicionar']);
     });
 };
