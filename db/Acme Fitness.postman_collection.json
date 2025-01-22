@@ -1,0 +1,1181 @@
+{
+	"info": {
+		"_postman_id": "d7d9475f-2cab-4d62-b0d1-eb73ad38360f",
+		"name": "Acme Fitness",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27499760"
+	},
+	"item": [
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "adicionar categoria 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Acougue",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Produtos animais",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar categoria 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "456789",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Padaria",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Pães e Doces",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterar categoria 1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Doces",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Confeitaria",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/acme_fitness/api/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"acme_fitness",
+								"api",
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar categoria 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/categorias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar categoria 1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/categorias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "adicionar cliente 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Maria",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "12345678909",
+									"type": "text"
+								},
+								{
+									"key": "dataNascimento",
+									"value": "1965-08-26",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar cliente 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Roberta",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "79329309011",
+									"type": "text"
+								},
+								{
+									"key": "dataNascimento",
+									"value": "1998-06-14",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar cliente 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar cliente 2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterar cliente 2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Augusto",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "25128598004",
+									"type": "text"
+								},
+								{
+									"key": "dataNascimento",
+									"value": "1975-06-22",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "adicionar produto 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_categoria",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "codigo",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "pão de mel",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "6.90",
+									"type": "text"
+								},
+								{
+									"key": "peso",
+									"value": "0.20",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "bolinho de mel e especiarias com cobertura de chocolate",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar produto 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_categoria",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "codigo",
+									"value": "864645",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Alcatra",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Carne bovina",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "45.00",
+									"type": "text"
+								},
+								{
+									"key": "peso",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterar produto 1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_categoria",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "codigo",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Cantoneira",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "10.00",
+									"type": "text"
+								},
+								{
+									"key": "peso",
+									"value": "2.00",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Kit Cantoneiras",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar produto 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/produtos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"produtos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar produto 2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/produtos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"produtos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endereco",
+			"item": [
+				{
+					"name": "alterar endereço 3",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_cliente",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "codigo",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "logradouro",
+									"value": "Rua Knupp",
+									"type": "text"
+								},
+								{
+									"key": "numero",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "bairro",
+									"value": "Maria Teresa",
+									"type": "text"
+								},
+								{
+									"key": "cidade",
+									"value": "Nova Friburgo",
+									"type": "text"
+								},
+								{
+									"key": "cep",
+									"value": "28634130",
+									"type": "text"
+								},
+								{
+									"key": "complemento",
+									"value": "casa verde",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar endereço 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_cliente",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "codigo",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "logradouro",
+									"value": "Rua Knupp",
+									"type": "text"
+								},
+								{
+									"key": "numero",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "bairro",
+									"value": "Maria Teresa",
+									"type": "text"
+								},
+								{
+									"key": "cidade",
+									"value": "Nova Friburgo",
+									"type": "text"
+								},
+								{
+									"key": "cep",
+									"value": "28634130",
+									"type": "text"
+								},
+								{
+									"key": "complemento",
+									"value": "casa verde",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar endereço 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_cliente",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "codigo",
+									"value": "962986",
+									"type": "text"
+								},
+								{
+									"key": "logradouro",
+									"value": "Rua Pedro Dias Batista ",
+									"type": "text"
+								},
+								{
+									"key": "numero",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "bairro",
+									"value": "Centro",
+									"type": "text"
+								},
+								{
+									"key": "cidade",
+									"value": "Águas de Santa Bárbara",
+									"type": "text"
+								},
+								{
+									"key": "cep",
+									"value": "18770-970",
+									"type": "text"
+								},
+								{
+									"key": "complemento",
+									"value": "casa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar endereço 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_cliente",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "codigo",
+									"value": "5646879",
+									"type": "text"
+								},
+								{
+									"key": "logradouro",
+									"value": "Rua Washington Luís",
+									"type": "text"
+								},
+								{
+									"key": "numero",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "bairro",
+									"value": "Centro",
+									"type": "text"
+								},
+								{
+									"key": "cidade",
+									"value": "Ariri",
+									"type": "text"
+								},
+								{
+									"key": "cep",
+									"value": "11995-970",
+									"type": "text"
+								},
+								{
+									"key": "complemento",
+									"value": "casa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar endereço 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/enderecos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"enderecos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar endereços",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar endereço 2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/enderecos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"enderecos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Variação",
+			"item": [
+				{
+					"name": "adicionar variante",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_produto",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cor",
+									"value": "Amarelo",
+									"type": "text"
+								},
+								{
+									"key": "tamanho",
+									"value": "20,4 x 22,4mm",
+									"type": "text"
+								},
+								{
+									"key": "quantidade",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"value": "imagem.png",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/variacoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"variacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterar variação",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_produto",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cor",
+									"value": "vermelha",
+									"type": "text"
+								},
+								{
+									"key": "tamanho",
+									"value": "20 x 23,4mm",
+									"type": "text"
+								},
+								{
+									"key": "quantidade",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"value": "imagem.png",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/variacoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"variacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar variação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/variacoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"variacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar variação 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/variacoes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"variacoes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar variação",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/acme_fitness/variacoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acme_fitness",
+								"variacoes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rota teste",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/acme_fitness/teste",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"acme_fitness",
+						"teste"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
