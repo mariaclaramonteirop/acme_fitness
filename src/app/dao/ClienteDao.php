@@ -2,8 +2,8 @@
 
 namespace Maria\AcmeFitness\Dao;
 
-use Src\core\PDOSingleton;
-use App\models\Cliente;
+use core\PDOSingleton;
+use Maria\AcmeFitness\Models\Cliente;
 use PDO;
 use PDOException;
 

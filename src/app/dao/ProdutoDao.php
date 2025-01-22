@@ -1,8 +1,8 @@
 <?php
 
 namespace Maria\AcmeFitness\Dao;
-use App\models\Produto;
-use Src\core\PDOSingleton;
+use Maria\AcmeFitness\Models\Produto;
+use core\PDOSingleton;
 use PDO;
 use PDOException;
 
@@ -58,7 +58,7 @@ class ProdutoDao
         }
     }
 
-    public function deletar($id){
+    public function excluir($id){
 
         try {
             $sql = "DELETE FROM produtos WHERE id = :id";
@@ -82,7 +82,7 @@ class ProdutoDao
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             $categoriaDao = new CategoriaDao();
-            $categoria = $categoriaDao->listarUm($resultado['id_categoria']);
+            $categoria = $categoriaDao->listarUm($result['id_categoria']);
             $produto = new Produto($result['codigo'], $result['nome'], $result['descricao'], $result['preco'], $result['peso'], $result['data_cadastro'], $categoria);
             $produto->setId($result['id']);
 
@@ -98,7 +98,7 @@ class ProdutoDao
     public function listarTodos() {
 
         try {
-            $stmt = $this->conexao->prepare("SELECT * FROM produtos");
+            $stmt = $this->conn->prepare("SELECT * FROM produtos");
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $produtos = [];

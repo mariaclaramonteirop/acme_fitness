@@ -1,9 +1,9 @@
 <?php
 
 namespace Maria\AcmeFitness\Dao;
-use App\models\Pedido;
+use Maria\AcmeFitness\Models\Pedido;
 use PDOException;
-use Src\core\PDOSingleton;
+use core\PDOSingleton;
 
 class PedidoDao{
     private $conn;

@@ -1,8 +1,8 @@
 <?php
 
 namespace Maria\AcmeFitness\Dao;
-use App\models\Endereco;
-use Src\core\PDOSingleton;
+use Maria\AcmeFitness\Models\Endereco;
+use core\PDOSingleton;
 use PDO;
 use PDOException;
 

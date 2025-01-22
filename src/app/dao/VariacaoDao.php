@@ -2,8 +2,8 @@
 
 namespace Maria\AcmeFitness\Dao;
 
-use App\models\Variacao;
-use Src\core\PDOSingleton;
+use Maria\AcmeFitness\Models\Variacao;
+use core\PDOSingleton;
 use PDO;
 use PDOException;
 
