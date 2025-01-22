@@ -25,7 +25,7 @@
 3. **Configure o banco de dados:**
    - Crie um banco de dados no MySQL.
    - Importe o arquivo `sql.sql` fornecido no repositório.
-   - Renomeie o arquivo `.env exempla` que contém os dados do banco.
+   - Renomeie o arquivo `.env copy` que contém os dados do banco.
 
 4. **Inicie o servidor local:**
    Com o Slim Framework configurado, você pode rodar o servidor embutido do PHP:
