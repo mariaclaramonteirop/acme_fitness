@@ -17,7 +17,14 @@ $routes = require __DIR__ . '/../src/routes/routes.php';
 $routes($app);
 
 
-// $app->addErrorMiddleware(true, true, true);
+$app->addErrorMiddleware(true, true, true);
 
+$app->get('/teste', function ($request, $response) {
+    $response->getBody()->write('Rota funcionando!');
+    return $response;
+});
+
+
+$app->setBasePath('/acme_fitness');
 
 $app->run();
